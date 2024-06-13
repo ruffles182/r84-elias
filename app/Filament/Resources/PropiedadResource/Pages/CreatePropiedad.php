@@ -9,4 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePropiedad extends CreateRecord
 {
     protected static string $resource = PropiedadResource::class;
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

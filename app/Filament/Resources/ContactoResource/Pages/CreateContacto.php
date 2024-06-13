@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateContacto extends CreateRecord
 {
     protected static string $resource = ContactoResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

@@ -30,6 +30,7 @@ class PropiedadResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+	    ->defaultPaginationPageOption(50)
             ->columns([
                 //
             ])
@@ -60,5 +61,12 @@ class PropiedadResource extends Resource
             'create' => Pages\CreatePropiedad::route('/create'),
             'edit' => Pages\EditPropiedad::route('/{record}/edit'),
         ];
+    }
+    public static function getNavigationIcon(): string {
+        return 'heroicon-o-building-office';
+    }
+    public static function getLabel(): string
+    {
+        return 'Propiedades';
     }
 }
