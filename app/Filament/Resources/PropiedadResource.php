@@ -23,7 +23,21 @@ class PropiedadResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('link')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('nombre')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('direccion')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('precio')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('moneda')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -32,7 +46,25 @@ class PropiedadResource extends Resource
         return $table
 	    ->defaultPaginationPageOption(50)
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('link')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nombre')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('direccion')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('precio')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('moneda')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
