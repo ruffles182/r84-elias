@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ContactoResource\Pages;
+namespace App\Filament\Resources\AgencyResource\Pages;
 
-use App\Filament\Resources\ContactoResource;
+use App\Filament\Resources\AgencyResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListContactos extends ListRecords
+class ListAgencies extends ListRecords
 {
-    protected static string $resource = ContactoResource::class;
+    protected static string $resource = AgencyResource::class;
 
     protected function getHeaderActions(): array
     {
