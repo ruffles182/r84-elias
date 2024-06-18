@@ -36,10 +36,14 @@ class PropertyResource extends Resource
                 Forms\Components\TextInput::make('map_link'),
                 Forms\Components\TextInput::make('agent_link')
                     ->required(),
-                Forms\Components\TextInput::make('agent')
-                    ->numeric(),
-                Forms\Components\TextInput::make('agency')
-                    ->numeric(),
+                Forms\Components\Select::make('agent_id')
+                    ->preload()
+                    ->searchable()
+                    ->relationship('vendor','name'),
+                Forms\Components\Select::make('agency_id')
+                    ->preload()
+                    ->searchable()
+                    ->relationship('agency','name'),
                 Forms\Components\DateTimePicker::make('date_listed')
                     ->required(),
                 Forms\Components\DateTimePicker::make('date_closed'),
