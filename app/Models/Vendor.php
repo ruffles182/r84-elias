@@ -11,14 +11,5 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Vendor extends Model
 {
     use HasFactory;
-
-    public function agencia()
-    {
-        return $this->belongsTo(Agencia::class);
-    }
-
-    public function propiedades()
-    {
-        return $this->hasMany(Propiedad::class);
-    }
+    
 }
